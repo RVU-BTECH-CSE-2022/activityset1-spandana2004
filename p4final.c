@@ -20,12 +20,10 @@ int srtcmp(char a[],char b[])
       else if (a[i]>b[i])
       {
         result=1;
-       
       }
       else
       {
         result=2;
-        
       }
     }
   return result;
