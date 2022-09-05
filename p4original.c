@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-//void input_two_string(char *,char *);
+
 void input_two_string(char a[],char b[])
 {
       printf("enter string 1:");
@@ -11,24 +11,30 @@ void input_two_string(char a[],char b[])
 int srtcmp(char a[],char b[])
 {
   int result;
-  for (int i=0;i='\0';i++)
+  for (int i=0;a[i]==b[i];i++)
     {
-      if((a[i]>b[i])&&(a[i]&&b[i]>0))
-      {
-        result=1;
-        break;
-      }
-      else 
+      /*if(a[i]==b[i])
       {
         result=0;
-        break;
+      }
+      else*/ if (a[i]>b[i])
+      {
+        result=1;
+      }
+      else
+      {
+        result=2;
       }
     }
   return result;
 }
 void output(char a[],char  b[],int result)
 {
-  if(result==1)
+  /*if(result==0)
+  {
+    printf("the strings are same");
+  }
+  else */if(result==1)
   {
     printf("%s is greater than %s",a,b);
   }
@@ -42,7 +48,6 @@ int main()
 int result;
   char a[20],b[20];
   input_two_string(a,b);
-  
   result=srtcmp(a,b);
   output(a,b,result);
 }
